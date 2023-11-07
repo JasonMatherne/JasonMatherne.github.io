@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>clicker lol</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body style="background-color: black;">
+    <button class="center"> <img src="https://i.ytimg.com/vi/LRV52ZkS0oY/sddefault.jpg" height="500px" width="500px"
+            id="chopper"></button>
+    <button id="lmao" class="center">UPGRADE!</button>
+    <button id="upgradelvl" class="center">AUTOCLICKER!</button>
+    <center>
+        <h1 style="color:white" id="newScore">
+            Score = 0
+        </h1>
+    </center>
+</body>
+
+</html>
+<script>
+    document.getElementById("chopper").addEventListener("click", addScore)
+    document.getElementById("lmao").addEventListener("click", upgrade)
+    document.getElementById("upgradelvl").addEventListener("click", autoClickerBuy)
+    function addScore() {
+        score = score + adder
+        document.getElementById("newScore").innerText = "Score = " + score
+    }
+    function upgrade() {
+        if (score >= upgradeCost) {
+            adder = adder + 1
+            score = score - upgradeCost
+            upgradeCost=upgradeCost+10
+        } else { 
+            alert("NOT ENOUGH LOSER!!")
+         }
+        document.getElementById("lmao")
+        document.getElementById("newScore").innerText = "Score = " + score
+    }
+    function autoClickerFunctional(){
+
+        if (autoClickerLevel >= 1) {
+            score = score + 1
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 2) {
+            score = score + 2
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 3) {
+            score = score + 3
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 4) {
+            score = score + 4
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 5) {
+            score = score + 5
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 6) {
+            score = score + 6
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 7) {
+            score = score + 7
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 8) {
+            score = score + 8
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 9) {
+            score = score + 9
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+        if (autoClickerLevel >= 10) {
+            score = score + 10
+            document.getElementById("newScore").innerText = "Score = " + score
+        }
+    }
+    function autoClickerBuy(){
+        if (score >= autoClickerCost) {
+            score = score - autoClickerCost
+            autoClickerCost = autoClickerCost + 10
+            autoClickerLevel = autoClickerLevel + 1
+            document.getElementById("upgradelvl")
+            document.getElementById("newScore").innerText = "Score = " + score
+        } else {alert("NOT ENOUGH LOSER!!")}
+    }
+    setInterval(autoClickerFunctional, 1000)
+    var score = 0
+    var adder = 1
+    var upgradeCost = 10
+    var autoClickerLevel = 0
+    var autoClickerCost = 20
+</script>
